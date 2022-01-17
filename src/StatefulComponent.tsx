@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 
-class StatefulComponent extends Component {
-  constructor(props) {
-    super(props);
+type MyState = {
+  count: number; // like this
+};
 
-    this.state = {
-      count: 0
-    };
-  }
+class StatefulComponent extends Component<MyState> {
+  state: MyState = {
+    count: 0
+  };
+
   increment = () => {
     this.setState(() => ({ count: this.state.count + 1 }));
   };
